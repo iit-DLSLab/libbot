@@ -1028,7 +1028,8 @@ static double cast_to_double(const char * key, const char * val, double * out)
 
   // Replace char with decimal in current locale
   if(found_dec != NULL){
-	  (*found_dec) = (*dec_point);
+      // assuming only one char for both dividers
+      strncpy(found_dec, *dec_point, 1);
   }
 
   // Use locale safely
